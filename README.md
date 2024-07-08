@@ -6,16 +6,20 @@ Este projeto foi desenvolvido para a matéria de Fundamentos de Programação We
 
 ### Arquivos HTML
 
-- **index.html**: Página inicial do site com introdução e navegação principal.
+- **índice.html**: Página inicial do site com introdução e navegação principal.
 - **entrarconta.html**: Página de login para usuários.
-- **about.html**: Página de conteúdo informativo sobre o site.
+- **sobre.html**: Página de conteúdo informativo sobre o site.
+- **criarconta.html**: Página para criação de conta de usuários.
 
 ### Arquivos PHP
 
 - **login.php**: Script PHP para processamento do login dos usuários.
 - **sistema.php**: Página principal do sistema acessível após login, com funcionalidades restritas a usuários autenticados.
 - **edit_coleta.php**: Página para edição de dados de coleta.
-- **saveEdit.php**: Script PHP para salvar edições feitas nos dados de coleta.
+- **salvarEditar.php**: Script PHP para salvar edições feitas nos dados de coleta.
+- **novousuario.php**: Script PHP para adicionar novos usuários.
+- **excluir.php**: Script PHP para exclusão de dados.
+- **configuração.php**: Arquivo para configurações do projeto.
 
 ### Arquivos JavaScript
 
@@ -23,9 +27,9 @@ Este projeto foi desenvolvido para a matéria de Fundamentos de Programação We
 
 ### Arquivos CSS
 
-- **style.css**: Arquivo de estilos CSS para padronizar a aparência do site.
+- **estilo.css**: Arquivo de estilos CSS para padronizar a aparência do site.
 
-### Banco de Dados
+## Banco de Dados
 
 O projeto utiliza um banco de dados MySQL para armazenar dados dos usuários e informações necessárias para o funcionamento do sistema. A estrutura do banco de dados inclui tabelas relacionadas para armazenar informações de coleta e usuários.
 
@@ -68,7 +72,7 @@ Nome: Igor Fiori
 - Apresente-se (diga seu nome e apareça no vídeo).
 
 2. **Navegação pelo Site**
-- Mostre a página inicial (`index.html`) rodando localmente (localhost).
+- Mostre a página inicial (`índice.html`) rodando localmente (localhost).
 - Navegue pelo menu padrão que está presente em todas as páginas.
 
 3. **Página de Login (`entrarconta.html`)** 
@@ -76,9 +80,9 @@ Nome: Igor Fiori
 
 4. **Página de Sistema (`sistema.php`)** 
 - Demonstre a página principal do sistema que é acessada após o login.
-- Mostre a funcionalidade de edição de dados de coleta e como o script `saveEdit.php` salva as alterações.
+- Mostre a funcionalidade de edição de dados de coleta e como o script `salvarEditar.php` salva as alterações.
 
-5. **Sobre o Projeto (`about.html`)** 
+5. **Sobre o Projeto (`sobre.html`)** 
 - Apresente a página informativa sobre o projeto, evidenciando o uso de HTML, CSS e JavaScript.
 
 6. **Banco de Dados**
