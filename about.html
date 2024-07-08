@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>About</title>
+</head>
+
+<body>
+    <section>
+        <!--HEADER-->
+        <header>
+            <a href="index.html"><img src="img/recolhe+.png" alt="logotype" class="logotype"></a>
+            <nav class="navegation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#section2">Serviços</a></li>
+                    <li><a href="criarcoleta.php">Coleta</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#" id="loginBtn">Login</a></li>
+                </ul>
+            </nav>
+            <!-- Modal de Login -->
+            <div id="loginDropdown" class="dropdown-content">
+                <br>
+                <h2>Que bom ver você aqui!</h2>
+                <br>
+                <button class="modal-button" id="entrarConta">Entrar na Conta</button>
+                <button class="modal-button" id="criarConta">Criar Conta</button>
+            </div>
+        </header>
+        <!--HEADER END-->
+
+        <!--TEXT-HOME END-->
+        <div class="container">
+            <div class="text-home">
+                <h2><span><span></span></span></br><span>SOBRE O PROJETO</span></h2>
+                <p>Este site foi desenvolvido como parte da <i>SOMATIVA 1</i> da disciplina de Fundamentos de
+                    Programação Web da PUC PR.
+                    O objetivo principal deste trabalho é demonstrar a capacidade de criar um site front-end utilizando
+                    exclusivamente HTML, CSS e JavaScript,
+                    sem o uso de frameworks ou plataformas de código. Este projeto é uma oportunidade para mostrar
+                    a fluência nos conceitos fundamentais dessas tecnologias.</p>
+                <div>
+                    <h2>Estrutura do Projeto</br><span></span></h2>
+                    <p>O site é composto por várias páginas interligadas, mantendo um padrão visual uniforme através do
+                        uso consistente de cores, fontes e imagens. O menu de navegação, presente em todas as páginas,
+                        facilita a movimentação do usuário pelo site. As principais páginas do site são:</p><br><br>
+
+                    <li><b><i>index.html:</i></b> Página inicial que introduz o conteúdo do site.</li><br>
+                    <li><b><i>form.html:</i></b> Página que contém um formulário para captação e validação de dados do
+                        usuário.</li><br>
+                    <li><b><i>formAction.html:</i></b> Página que recebe os dados enviados pelo formulário utilizando o
+                        método GET, processados via JavaScript.</li><br>
+                    <li><b><i>about.html:</i></b> Página que fornece informações sobre o projeto.</p>
+                    </li><br>
+                    <div>
+                        <h2>Tecnologias Utilizadas</br><span></span></h2>
+
+                        <p><b>HTML</b></p><br>
+
+                        <p>Os elementos HTML foram utilizados para estruturar o conteúdo do site, criando uma base
+                            semântica clara e acessível.</p><br>
+
+                        <p><b>CSS</b></p><br>
+
+                        <p> As regras de estilo CSS foram aplicadas para formatar a apresentação visual dos elementos
+                            HTML, com classes reutilizáveis que mantêm a consistência visual do site.</P><br>
+
+                        <p><b>JAVASCRIPT</b></p><br>
+
+                        <p>O JavaScript foi empregado para adicionar dinamismo e interatividade, como o controle de
+                            menus, validação de dados no formulário, e manipulação de estilos dos elementos HTML em
+                            resposta às ações do usuário.</p><br>
+                    </div>
+
+                    <h2>Funcionalidades</br><span></span></h2>
+                    <li><b>Formulário:</b> O formulário valida todos os campos antes de permitir o envio dos dados. A
+                        validação é realizada via JavaScript para garantir que os dados estejam corretos.</li><br>
+                    <li><b>Recuperação de Dados:</b> Os dados enviados pelo formulário são recuperados e processados na
+                        página formAction.html utilizando JavaScript, exibindo os dados submetidos pelo usuário.</p>
+                    </li><br>
+
+                    <div>
+                        <h2>Organização dos aqruivos</br><span></span></h2>
+                        <p>Os arquivos do projeto estão organizados em subpastas para facilitar a manutenção e o
+                            entendimento do código:</p><br>
+
+                        <li><b>HTML:</b> Arquivos principais do site. </li><br>
+                        <li> <b>CSS:</b> Regras de estilo organizadas em classes reutilizáveis.</li><br>
+                        <li><b>JavaScript:</b> Scripts que adicionam funcionalidade e interatividade.</li><br>
+                        <li><b>Imagens:</b> Recursos visuais utilizados no site.</li><br>
+
+                        <div>
+                            <h2>Apresentação</br><span></span></h2>
+                            <li>Apresentação pessoal.</li><br>
+                            <li>Narração da explicação da navegação pelo site.</li><br>
+                            <li>Demonstração das funcionalidades e do código <i>(HTML/CSS/JavaScript).</i></li><br><br>
+
+                            <p>Agradeço pela oportunidade de apresentar este projeto e espero que ele demonstre
+                                claramente minha compreensão e habilidades com as tecnologias fundamentais de
+                                desenvolvimento web.</p>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+        <!--TEXT-HOME END-->
+
+    </section>
+
+    <script>
+
+
+        // Script para abrir e fechar o dropdown de login
+        var loginBtn = document.getElementById("loginBtn");
+        var loginDropdown = document.getElementById("loginDropdown");
+
+        loginBtn.onclick = function (e) {
+            e.preventDefault();
+            loginDropdown.classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('#loginBtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        // Redirecionar para entrarnaconta.html ao clicar no botão "Entrar na Conta"
+        document.getElementById("entrarConta").addEventListener("click", function () {
+            window.location.href = "entrarconta.html";
+        });
+
+        // Redirecionar para criarconta.html ao clicar no botão "Criar Conta"
+        document.getElementById("criarConta").addEventListener("click", function () {
+            window.location.href = "criarconta.html";
+        });
+
+    </script>
+    <!--FOOTER-->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>Sobre Nós</h4>
+                    <p>A RECOLHE+ é uma empresa líder em gestão global de resíduos, comprometida com a sustentabilidade
+                        e a responsabilidade ambiental.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#section2">Serviços</a></li>
+                        <li><a href="criarcoleta.php">Coleta</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="mailto:contato@recolhemais.com">hello@recolhemais.com</a></li>
+                        <li><a href="tel:+5511999999999">(41) 99579-8587 </a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Siga-nos</h4>
+                    <div class="social-links">
+                        <a href="#"><img src="img/facebook.png" alt="Facebook" height="30" width="30"></a>
+                        <a href="#"><img src="img/twitter.png" alt="Twitter" height="30" width="30"></a>
+                        <a href="#"><img src="img/instagram.png" alt="Instagram" height="30" width="30"></a>
+                        <a href="#"><img src="img/linkedin.png" alt="LinkedIn" height="30" width="30"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RECOLHE+. <i>Trablho Somativo 01 - Aluno: Igor David Loyola Fiori - Todos os direitos
+                        reservados a matéria Fundamentos de Programação Web - PUC PR </i></p>
+            </div>
+        </div>
+    </footer>
+    <!--END FOOTER-->
+
+</body>
+
+</html>

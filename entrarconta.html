@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+
+
+</head>
+<section>
+
+    <body>
+
+        <!--HEADER-->
+        <header>
+            <a href="index.html"><img src="img/recolhe+.png" alt="logotype" class="logotype"></a>
+            <nav class="navegation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#section2">Serviços</a></li>
+                    <li><a href="criarcoleta.php">Coleta</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#" id="loginBtn">Login</a></li>
+                </ul>
+            </nav>
+            <!-- Modal de Login -->
+            <div id="loginDropdown" class="dropdown-content">
+                <br>
+                <h2>Que bom ver você aqui!</h2>
+                <br>
+                <button class="modal-button" id="entrarConta">Entrar na Conta</button>
+                <button class="modal-button" id="criarConta">Criar Conta</button>
+            </div>
+        </header>
+        <!--HEADER END-->
+
+        <div class="entrarconta">
+            <h1 class="titulo_login">Acesse com seu login ou cadastre-se!</h1>
+            <form action="login.php" method="POST">
+                <br><br>
+                <input class="input_entrarconta" type="text" name="email" placeholder="E-mail" required>
+                <br><br>
+                <input class="input_entrarconta" type="password" name="senha" placeholder="Senha" re>
+                <br><br><br>
+                <input class="button_entrarconta" type="submit" name="submit" value="Entrar">
+            </form>
+        </div>
+
+</section>
+  <!-- Script para abrir e fechar o dropdown de login -->
+    <script>
+        var loginBtn = document.getElementById("loginBtn");
+        var loginDropdown = document.getElementById("loginDropdown");
+
+        loginBtn.onclick = function (e) {
+            e.preventDefault();
+            loginDropdown.classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('#loginBtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        // Redirecionar para entrarnaconta.html ao clicar no botão "Entrar na Conta"
+        document.getElementById("entrarConta").addEventListener("click", function () {
+            window.location.href = "entrarconta.html";
+        });
+
+        // Redirecionar para criarconta.html ao clicar no botão "Criar Conta"
+        document.getElementById("criarConta").addEventListener("click", function () {
+            window.location.href = "criarconta.html";
+        });
+
+        // Verificar se há parâmetro de erro na URL e exibir alerta correspondente
+        var urlParams = new URLSearchParams(window.location.search);
+        var erro = urlParams.get('erro');
+
+        if (erro === 'senha') {
+            alert("Senha incorreta. Por favor, tente novamente.👾");
+        } else if (erro === 'email') {
+            alert("E-mail não encontrado. Por favor, verifique seu e-mail.👾");
+        } else if (erro === 'campos') {
+            alert("Por favor, preencha todos os campos.👾");
+        }
+    </script>
+
+
+
+<!--FOOTER-->
+<footer>
+    <div class="footer-container">
+        <div class="footer-row">
+            <div class="footer-col">
+                <h4>Sobre Nós</h4>
+                <p>A RECOLHE+ é uma empresa líder em gestão global de resíduos, comprometida com a sustentabilidade
+                    e a responsabilidade ambiental.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#section2">Serviços</a></li>
+                    <li><a href="criarcoleta.php">Coleta</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul>
+                    <li><a href="mailto:contato@recolhemais.com">hello@recolhemais.com</a></li>
+                    <li><a href="tel:+5511999999999">(41) 99579-8587 </a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Siga-nos</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/"><img src="img/facebook.png" alt="Facebook" height="30"
+                            width="30"></a>
+                    <a href="https://x.com/?lang=pt-br"><img src="img/twitter.png" alt="Twitter" height="30"
+                            width="30"></a>
+                    <a href="https://www.instagram.com/"><img src="img/instagram.png" alt="Instagram" height="30"
+                            width="30"></a>
+                    <a href="https://www.linkedin.com/"><img src="img/linkedin.png" alt="LinkedIn" height="30"
+                            width="30"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RECOLHE+. <i>Trablho Somativo 01 - Aluno: Igor David Loyola Fiori - Todos os direitos
+                    reservados a matéria Fundamentos de Programação Web - PUC PR </i></p>
+        </div>
+    </div>
+</footer>
+<!--END FOOTER-->
+</div>
+
+</html>

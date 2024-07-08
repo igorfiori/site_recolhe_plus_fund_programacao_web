@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Recolhe+</title>
+</head>
+
+<body>
+    <section>
+        <!--CIRCLE -->
+        <div class="circle"></div>
+        <!--CIRCLE END-->
+
+        <!--HEADER-->
+        <header>
+            <a href="index.html"><img src="img/recolhe+.png" alt="logotype" class="logotype"></a>
+            <nav class="navegation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#section2">Serviços</a></li>
+                    <li><a href="criarcoleta.php">Coleta</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#" id="loginBtn">Login</a></li>
+                </ul>
+            </nav>
+            <!-- Modal de Login -->
+            <div id="loginDropdown" class="dropdown-content">
+                <br>
+                <h2>Que bom ver você aqui!</h2>
+                <br>
+                <button class="modal-button" id="entrarConta">Entrar na Conta</button>
+                <button class="modal-button" id="criarConta">Criar Conta</button>
+            </div>
+        </header>
+        <!--HEADER END-->
+
+        <!--TEXT-HOME END-->
+        <div class="container">
+            <div class="text-home">
+                <h2>GESTÃO GLOBAL DE </br><span>RESÍDUOS</span></h2>
+                <p>A RECOLHE+ oferece a melhor infraestrutura do mercado para a gestão global de resíduos.
+                    Com expertise e tecnologia avançada, estamos prontos para tratar diversos tipos de resíduos
+                    coletados.
+                    Na RECOLHE+, garantimos que os resíduos da sua produção sejam tratados com máxima eficiência e um
+                    compromisso
+                    inabalável com a responsabilidade ambiental.
+                    Confie na RECOLHE+ e contribua para um futuro mais sustentável. Junte-se a nós e faça a diferença!
+                </p>
+                <a href="#" class="open-modal"><b>SOLICITE UM ORÇAMENTO</b></a>
+            </div>
+        </div>
+        <!--TEXT-HOME END-->
+
+        <!--ICONS HOME-->
+        <ul class="icons-home">
+            <li><a href="https://www.w3schools.com/html/default.asp" target="_blank"><img src="img/html.png"
+                        height="65px" width="65px" alt="LOGO-HTML"></a></li>
+            <li><a href="https://www.w3schools.com/css/default.asp" target="_blank"><img src="img/css.png" height="65px"
+                        width="65px" alt="LOGO-CSS"></a></li>
+            <li><a href="https://www.w3schools.com/js/default.asp" target="_blank"><img src="img/js.png" height="65px"
+                        width="65px" alt="LOGO-JS"></a></li>
+            <li><a href="https://docs.github.com/pt/get-started" target="_blank"><img src="img/github.png" height="65px"
+                        width="65px" alt="LOGO-GITHUB"></a></li>
+        </ul>
+        <!--ICONS HOME END-->
+
+        <!--IMG PLANET-->
+        <div class="boxImg">
+            <img src="img/planet_recicle_.png" alt="" class="img1">
+        </div>
+        <!--IMG PLANET END-->
+    </section>
+
+    <!-- Inclusão do formulário -->
+    <div id="formulario"></div>
+
+    <!-- Template do formulário -->
+    <template id="template-formulario">
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <br>
+                <h2>Solicite um Orçamento</h2>
+                <br>
+                <form action="formulario.php" method="post" autocomplete="off">
+                    <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
+                    <input type="email" id="email" name="email" placeholder="Seu Email" required>
+                    <input type="tel" id="telefone" name="telefone" placeholder="Seu Telefone/Whatsapp" required>
+                    <textarea type="text" id="descricao" name="descricao" placeholder="Descrição do Orçamento..."
+                        rows="4" required></textarea>
+                    <button type="submit_orcamento" name="submit_orcamento" id="submit_orcamento"><b>ENVIAR</b></button>
+                </form>
+            </div>
+        </div>
+    </template>
+
+    <!-- Script para incluir e manipular o formulário -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Clone o conteúdo do modelo e adicione ao index.html
+            const template = document.getElementById('template-formulario');
+            const clone = template.content.cloneNode(true);
+            document.getElementById('formulario').appendChild(clone);
+
+            // Script para abrir e fechar o modal
+            const modal = document.getElementById("modal");
+            const openModalButton = document.querySelector(".open-modal");
+            const closeButton = document.querySelector(".close-button");
+
+            // Abre o modal ao clicar no link "SOLICITE UM ORÇAMENTO"
+            openModalButton.addEventListener("click", function (e) {
+                e.preventDefault();
+                modal.style.display = "block";
+            });
+
+            // Fecha o modal ao clicar no botão de fechar
+            closeButton.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            // Fecha o modal ao clicar fora dele
+            window.addEventListener("click", function (e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+
+            // Validação do formulário
+            const form = document.getElementById('myForm');
+            form.addEventListener('submit', function (e) {
+                const email = document.getElementById('email').value;
+                const telefone = document.getElementById('telefone').value;
+
+                // Regex para validação de email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                // Regex para validação de telefone (somente números e 11 dígitos)
+                const telefoneRegex = /^\d{11}$/;
+
+                if (!emailRegex.test(email)) {
+                    alert('Por favor, insira um email válido.');
+                    e.preventDefault(); // Impede o envio do formulário
+                    return;
+                }
+
+                if (!telefoneRegex.test(telefone)) {
+                    alert('Por favor, insira um telefone válido com 11 dígitos.');
+                    e.preventDefault(); // Impede o envio do formulário
+                }
+            });
+        });
+
+
+        // Script para abrir e fechar o dropdown de login
+        var loginBtn = document.getElementById("loginBtn");
+        var loginDropdown = document.getElementById("loginDropdown");
+
+        loginBtn.onclick = function (e) {
+            e.preventDefault();
+            loginDropdown.classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('#loginBtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        // Redirecionar para entrarnaconta.html ao clicar no botão "Entrar na Conta"
+        document.getElementById("entrarConta").addEventListener("click", function () {
+            window.location.href = "entrarconta.html";
+        });
+
+        // Redirecionar para criarconta.html ao clicar no botão "Criar Conta"
+        document.getElementById("criarConta").addEventListener("click", function () {
+            window.location.href = "criarconta.html";
+        });
+    </script>
+</body>
+
+<!-- section 2 - serviços-->
+<section class="section2" id="section2">
+    <!--TEXT-HOME END-->
+    <div class="container-text2">
+        <div class="text-servico-2">
+            <hr class="separator">
+            <h2>Veja como a RECOLHE+ pode ajudar você e a sua empresa a cuidar mais e melhor do meio ambiente.</h2>
+            <img src="img/GRID_IMG.png" alt="" id="imagem_grid">
+
+        </div>
+    </div>
+    <!--TEXT-HOME END-->
+</section>
+<!-- section 2 - serviços end-->
+<!--SECTION 3-->
+<section class="section3" id="section3">
+    <div class="content">
+        <div class="text">
+            <h1>GERENCIAMENTO DE RESÍDUOS NA PALMA DA SUA MÃO.</h1>
+            <h2>TRANSFORME A GESTÃO AMBIENTAL DA SUA EMPRESA!</h2>
+
+            <p>A Plataforma de Gerenciamento de Resíduos é a prova do nosso compromisso com você! Com ela,
+                você pode facilmente acessar gráficos da sua empresa por períodos de coleta, além dos certificados de
+                destinação final dos resíduos.</p>
+
+
+            <p>Essa ferramenta, além de disponibilizar licenças e outros documentos da <b>Recolhe+</b>,
+                também oferece ao cliente cópias do<b> MTR, CDR e NF-e</b>, correspondentes à cada coleta realizada.</p>
+
+        </div>
+        <div class="image">
+            <img src="img/aplicativocoleta.png" alt="Aplicativo de Gerenciamento de Resíduos">
+            <div class="small-images">
+                <img src="img/googleplay.png" alt="Imagem 1">
+                <img src="img/applestore.png" alt="Imagem 2">
+            </div>
+
+
+</section>
+<!--END SECTION 3-->
+
+<!--FOOTER-->
+<footer>
+    <div class="footer-container">
+        <div class="footer-row">
+            <div class="footer-col">
+                <h4>Sobre Nós</h4>
+                <p>A RECOLHE+ é uma empresa líder em gestão global de resíduos, comprometida com a sustentabilidade e a
+                    responsabilidade ambiental.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#section2">Serviços</a></li>
+                    <li><a href="criarcoleta.php">Coleta</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul>
+                    <li><a href="mailto:contato@recolhemais.com">hello@recolhemais.com</a></li>
+                    <li><a href="tel:+5511999999999">(41) 99579-8587 </a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Siga-nos</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/"><img src="img/facebook.png" alt="Facebook" height="30"
+                            width="30"></a>
+                    <a href="https://x.com/?lang=pt-br"><img src="img/twitter.png" alt="Twitter" height="30"
+                            width="30"></a>
+                    <a href="https://www.instagram.com/"><img src="img/instagram.png" alt="Instagram" height="30"
+                            width="30"></a>
+                    <a href="https://www.linkedin.com/"><img src="img/linkedin.png" alt="LinkedIn" height="30"
+                            width="30"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RECOLHE+. <i>Trablho Somativo 01 - Aluno: Igor David Loyola Fiori - Todos os direitos
+                    reservados a matéria Fundamentos de Programação Web - PUC PR </i></p>
+        </div>
+    </div>
+</footer>
+<!--END FOOTER-->
+</div>
+
+</html>
