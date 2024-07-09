@@ -45,14 +45,14 @@ O projeto utiliza um banco de dados MySQL para armazenar dados dos usuários e i
 
 1. Clone o repositório para sua máquina local:
 
-git clone https://github.com/seuusuario/seurepositorio.git
+git clone https://github.com/igorfiori/site_recolhe_plus_fund_programacao_web.git
 
 
 2. Configure um servidor web local (ex: XAMPP, WAMP) e coloque os arquivos do projeto na pasta apropriada.
 
 3. Importe o banco de dados MySQL utilizando os arquivos de script SQL fornecidos.
 
-4. Acesse o site localmente através do endereço `http://localhost/nome-do-projeto`.
+4. Acesse o site localmente através do endereço `http://localhost/site_recolhe_plus_fund_programacao_web`.
 
 ## Tecnologias Utilizadas
 
